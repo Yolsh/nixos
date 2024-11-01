@@ -10,10 +10,7 @@ Once you are connected to the internet run these commands in the order shown:
 
 `~> exit`
 
-If you want to use the Impermanence system then you need to run:
-`~> `
-
-Other wise simply use fdisk to partition your drive and then format and mount accordingly.
+Simply use fdisk to partition your drive and then format and mount accordingly.
 
 Afterwards run:
 `~> nixos-generate-config --root /mnt`
