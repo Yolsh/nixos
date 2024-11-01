@@ -17,6 +17,8 @@ Afterwards run:
 
 `~> rm /mnt/etc/nixos/configuration.nix`
 
+`~> cp /mnt/etc/nixos/hardware-configuration.nix /etc/nixos`
+
 `~> cp -r --no-preserve=mode /new-nix/* /mnt/home/"lowercase-your-user"/nixos`
 
 If using the GUI option: `~> cp -r /mnt/home/"lowercase-your-user"/nixos/GUI/* /mnt/home/"lowercse-your-user"/Pictures/GUI/`
