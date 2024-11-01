@@ -22,8 +22,10 @@ Afterwards run:
 
 `~> rm -r /mnt/etc/nixos/*`
 
-`~> cp -r /new-nix/* /mnt/etc/nixos/`
+`~> cp -r /new-nix/* /mnt/home/"lowercase-your-user"/nixos`
 
-`~> nixos-install --flake /mnt/etc/nixos/hosts#your-option-here`
+`~> cp -r /mnt/home/"lowercase-your-user/nixos/GUI/*" /mnt/home/"lowercse-your-user"/Pictures/GUI/`
+
+`~> nixos-install --flake /mnt/home/"lowercase-your-user"/nixos/hosts#your-option-here`
 
 Once installed reboot and login selecting the correct Desktop Environment and use the default user password of "nixos". Once logged in run the command: `~> sudo passwd "your-username-here"` to change the password.
