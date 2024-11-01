@@ -2,8 +2,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = "/etc/nixos/GUI/BG.png";
-      wallpaper = ", /etc/nixos/GUI/BG.png";
+      preload = "~/Pictures/GUI/BG.png";
+      wallpaper = ", ~/Pictures/GUI/BG.png";
     };
   };
 }

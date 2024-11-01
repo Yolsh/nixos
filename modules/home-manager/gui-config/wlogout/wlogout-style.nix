@@ -31,47 +31,47 @@
     }
 
     #lock {
-      background-image: url("/etc/nixos/GUI/rocket-grey.png");
+      background-image: url("/home/yolsh/Pictures/GUI/rocket-grey.png");
     }
     #lock:hover {
-      background-image: url("/etc/nixos/GUI/rocket.png");
+      background-image: url("/home/yolsh/Pictures/GUI/rocket.png");
     }
     #lock:focus {
       outline: none;
-      background-image: url("/etc/nixos/GUI/rocket.png");
+      background-image: url("/home/yolsh/Pictures/GUI/rocket.png");
     }
 
     #logout {
-      background-image: url("/etc/nixos/GUI/astronaut-grey.png");
+      background-image: url("/home/yolsh/Pictures/GUI/astronaut-grey.png");
     }
     #logout:hover {
-      background-image: url("/etc/nixos/GUI/astronaut.png");
+      background-image: url("/home/yolsh/Pictures/GUI/astronaut.png");
     }
     #logout:focus {
       outline: none;
-      background-image: url("/etc/nixos/GUI/astronaut.png");
+      background-image: url("/home/yolsh/Pictures/GUI/astronaut.png");
     }
 
     #shutdown {
-      background-image: url("/etc/nixos/GUI/big-bang-grey.png");
+      background-image: url("/home/yolsh/Pictures/GUI/big-bang-grey.png");
     }
     #shutdown:hover {
-      background-image: url("/etc/nixos/GUI/big-bang.png");
+      background-image: url("/home/yolsh/Pictures/GUI/big-bang.png");
     }
     #shutdown:focus {
       outline: none;
-      background-image: url("/etc/nixos/GUI/big-bang.png");
+      background-image: url("/home/yolsh/Pictures/GUI/big-bang.png");
     }
 
     #reboot {
-      background-image: url("/etc/nixos/GUI/satellite-grey.png");
+      background-image: url("/home/yolsh/Pictures/GUI/satellite-grey.png");
     }
     #reboot:hover {
-      background-image: url("/etc/nixos/GUI/satellite.png");
+      background-image: url("/home/yolsh/Pictures/GUI/satellite.png");
     }
     #reboot:focus {
       outline: none;
-      background-image: url("/etc/nixos/GUI/satellite.png");
+      background-image: url("/home/yolsh/Pictures/GUI/satellite.png");
     }
   '';
 }

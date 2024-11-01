@@ -4,7 +4,7 @@
     settings = {
       # background:
       background = {
-        path = "/etc/nixos/GUI/BG.png";
+        path = "~/Pictures/GUI/BG.png";
         blur_passes = 2;
         contrast = 1;
         brightness = 0.5;
