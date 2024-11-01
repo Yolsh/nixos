@@ -19,7 +19,7 @@ Afterwards run:
 
 `~> cp -r --no-preserve=mode /new-nix/* /mnt/home/"lowercase-your-user"/nixos`
 
-If using the GUI option: `~> cp -r /mnt/home/"lowercase-your-user/nixos/GUI/*" /mnt/home/"lowercse-your-user"/Pictures/GUI/`
+If using the GUI option: `~> cp -r /mnt/home/"lowercase-your-user"/nixos/GUI/* /mnt/home/"lowercse-your-user"/Pictures/GUI/`
 
 `~> nixos-install --impure --flake /mnt/home/"lowercase-your-user"/nixos/hosts#your-option-here`
 
