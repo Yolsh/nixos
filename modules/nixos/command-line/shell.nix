@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   programs.fish.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.silent = true;
+  programs.direnv.nix-direnv.enable = true;
   programs.bash = {
     interactiveShellInit = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]

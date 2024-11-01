@@ -16,9 +16,9 @@
         {
             devShells.default = mkShell {
                 buildInputs = [
-                    python312
+                    go_1_23
                 ];
-                name = "python 3.12";
+                name = "go 1.23";
             };
         }
     );
