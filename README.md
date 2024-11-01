@@ -15,14 +15,14 @@ Simply use fdisk to partition your drive and then format and mount accordingly.
 Afterwards run:
 `~> nixos-generate-config --root /mnt`
 
-`~> cp /mnt/etc/nixos/hardware-configuration.nix /new-nix/hosts/your-option-here`
-
-`~> rm -r /mnt/etc/nixos/*`
+`~> rm /mnt/etc/nixos/configuration.nix`
 
 `~> cp -r /new-nix/* /mnt/home/"lowercase-your-user"/nixos`
 
-`~> cp -r /mnt/home/"lowercase-your-user/nixos/GUI/*" /mnt/home/"lowercse-your-user"/Pictures/GUI/`
+If using the GUI option: `~> cp -r /mnt/home/"lowercase-your-user/nixos/GUI/*" /mnt/home/"lowercse-your-user"/Pictures/GUI/`
 
-`~> nixos-install --flake /mnt/home/"lowercase-your-user"/nixos/hosts#your-option-here`
+`~> nixos-install --impure --flake /mnt/home/"lowercase-your-user"/nixos/hosts#your-option-here`
 
 Once installed reboot and login selecting the correct Desktop Environment and use the default user password of "nixos". Once logged in run the command: `~> sudo passwd "your-username-here"` to change the password.
+
+To update use the command: `nixos-rebuild switch --impure --flake ~/nixos/hosts#your-option-here`
