@@ -27,4 +27,14 @@ If using the GUI option: `~> cp -r /mnt/home/"lowercase-your-user"/nixos/GUI/* /
 
 Once installed reboot and login selecting the correct Desktop Environment and use the default user password of "nixos". Once logged in run the command: `~> sudo passwd "your-username-here"` to change the password.
 
+Then you need to run these commands so that your user can edit the nix config:
+
+`~> mkdir nixos-tmp`
+
+`~> cp -r --no-preserve=mode ~/nixos/* ~/nixos_tmp/`
+
+`~> sudo rm -r ~/nixos`
+
+`~> mv nixos_tmp nixos/`
+
 To update use the command: `nixos-rebuild switch --impure --flake ~/nixos/hosts#your-option-here`
