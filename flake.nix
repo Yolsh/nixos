@@ -14,7 +14,7 @@
   outputs = { self, nixpkgs, home-manager, hyprland,... }@inputs: 
     let 
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = nixpkgs.legacyInputs.${system};
     in
     {
       nixosConfigurations = {
@@ -22,6 +22,7 @@
           specialArgs = {inherit inputs;};
           modules = [
             ./hosts/default/configuration.nix
+            ./hosts/default/hardware-configuration.nix
             ./modules/nixos/gui.nix
             ./modules/nixos/cli.nix
             home-manager.nixosModules.default

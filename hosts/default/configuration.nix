@@ -1,6 +1,5 @@
 { config, pkgs, inputs, ... }: {
     imports = [
-        ./hardware-configuration.nix
         inputs.home-manager.nixosModules.default
     ];
     
@@ -34,6 +33,7 @@
     users.users.Yolsh = {
         isNormalUser = true;
         home = "/home/yolsh";
+        initialPassword = "nixos";
 	
         extraGroups = [
             "wheel"
