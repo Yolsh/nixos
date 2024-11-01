@@ -18,21 +18,11 @@
     in
     {
       nixosConfigurations = {
-        smallTop = nixpkgs.lib.nixosSystem {
+        default = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [
             ./hosts/default/configuration.nix
-            ./hosts/default/hardware-configuration.nix
-            ./modules/nixos/gui.nix
-            ./modules/nixos/cli.nix
-            home-manager.nixosModules.default
-          ];
-        };
-        fatTop = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [
-            ./hosts/default/configuration.nix
-            ./hosts/default/hardware-configuration.nix
+            /etc/nixos/hardware-configuration.nix
             ./modules/nixos/gui.nix
             ./modules/nixos/cli.nix
             home-manager.nixosModules.default
