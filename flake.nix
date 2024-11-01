@@ -18,7 +18,7 @@
     in
     {
       nixosConfigurations = {
-        default = nixpkgs.lib.nixosSystem {
+        smallTop = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [
             ./hosts/default/configuration.nix
@@ -28,13 +28,16 @@
             home-manager.nixosModules.default
           ];
         };
-        #alternate = nixpkgs.lib.nixosSystem {  #this allows mutiple setups for different machines
-        #  extraSpecialArgs = {inherit inputs;};
-        #  modules = [
-        #    ./hosts/alternate/configuration.nix
-        #    inputs.home-manager.nixosModules.default
-        #  ];
-        #};
+        fatTop = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/default/configuration.nix
+            ./hosts/default/hardware-configuration.nix
+            ./modules/nixos/gui.nix
+            ./modules/nixos/cli.nix
+            home-manager.nixosModules.default
+          ];
+        };
       };
     };
 }
