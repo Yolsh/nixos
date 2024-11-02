@@ -10,6 +10,7 @@
       };
     };
   };
+
   outputs = { self, nixpkgs, flake-utils, rust-overlay }:
     flake-utils.lib.eachDefaultSystem
       (system:
@@ -18,12 +19,11 @@
           pkgs = import nixpkgs {
             inherit system overlays;
           };
-          rustToolchain = pkgs.pkgsBuildHost.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
         in
         with pkgs;
         {
           devShells.default = mkShell {
-            buildInputs = [ rustToolchain ];
+            buildInputs = [ rust-bin.stable.latest.default ];
           };
         }
       );
