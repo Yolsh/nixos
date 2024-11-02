@@ -24,6 +24,7 @@
         {
           devShells.default = mkShell {
             buildInputs = [ rust-bin.stable.latest.default ];
+            name = "rust";
           };
         }
       );
