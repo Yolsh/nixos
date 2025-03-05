@@ -6,6 +6,7 @@
     ./gui-apps/greetd.nix
     ./gui-apps/defaults.nix
     ./gui-apps/vscode.nix
+    ./gui-apps/ulauncher.nix
   ];
 
   options = {
