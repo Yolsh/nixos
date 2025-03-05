@@ -15,7 +15,6 @@
       mission-center
       inputs.zen-browser.packages."${system}".default
       keyd
-      ulauncher
     ];
     
     services.keyd.enable = true;

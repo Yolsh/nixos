@@ -5,5 +5,6 @@
     ./gui-config/ghostty.nix
     ./gui-config/gtk.nix
     ./gui-config/swaync/swaync.nix
+    ./gui-config/ulauncher.nix
   ];
 }

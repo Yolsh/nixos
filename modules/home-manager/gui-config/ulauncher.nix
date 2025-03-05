@@ -7,7 +7,8 @@
           propagatedBuildInputs = with prev.python3Packages;
             old.propagatedBuildInputs
             ++ [
-              requests
+              pytz
+              babel
               pint
               simpleeval
               parsedatetime
