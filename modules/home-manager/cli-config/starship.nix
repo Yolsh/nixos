@@ -6,7 +6,7 @@
       add_newline = true;
       username = {
         show_always = true;
-        format = "[$user](fg:bold white bg:#E7896A)";
+        format = "[$user](fg:bold black bg:#E7896A)";
       };
       time = {
         disabled = false;

@@ -3,17 +3,17 @@
     enable = true;
     font.name = "JetBrains Mono Nerd Font";
     theme = {
-      name = "rose-pine";
-      package = pkgs.rose-pine-gtk-theme;
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
     iconTheme = {
-      name = "rose-pine";
-      package = pkgs.rose-pine-icon-theme;
+      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-dark-icons-gtk;  # gruvbox-plus-icons when fixed
     };
     cursorTheme = {
-      package = pkgs.rose-pine-cursor;
-      name = "BreezeX-RosePine-Linux";
-      size = 24;
+      package = pkgs.capitaine-cursors-themed;
+      name = "Capitaine Cursors (Gruvbox) - White";
+      size = 12;
     };
 
     gtk3.extraConfig = {
@@ -27,10 +27,10 @@
       '';
     };
   };
-  
+
   home.pointerCursor = {
-    name = "BreezeX-RosePine-Linux";
-    package = pkgs.rose-pine-cursor;
-    size = 24;
+    package = pkgs.capitaine-cursors-themed;
+      name = "Capitaine Cursors (Gruvbox) - White";
+      size = 12;
   };
 }

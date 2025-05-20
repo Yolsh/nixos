@@ -5,6 +5,9 @@
     functions = {
       fish_greeting = "neofetch";
     };
+    shellAliases = {
+      update = "sudo nixos-rebuild switch --upgrade --impure --flake ~/nixos/hosts#thinkpad";
+    };
+    shellInit = "theme_gruvbox dark hard";
   };
-  programs.direnv.enable = true;
 }

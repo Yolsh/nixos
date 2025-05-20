@@ -8,7 +8,6 @@
         # "~/nixos/GUI/terminal-crt.glsl"
         # "~/nixos/GUI/terminal-bloom.glsl"
       ];
-      theme = "rose-pine";
     };
   };
 }
