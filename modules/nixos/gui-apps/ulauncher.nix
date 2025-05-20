@@ -2,24 +2,22 @@
   # Ulauncher plugins dependecies installation via overlay
   nixpkgs = {
     overlays = [
-      (_: prev: {
-        ulauncher = prev.ulauncher.overrideAttrs (old: {
-          propagatedBuildInputs = with prev.python3Packages;
+      (self: super:{
+        ulauncher = super.ulauncher.overrideAttrs (old: rec {
+          propagatedBuildInputs = with super; [
             old.propagatedBuildInputs
-            ++ [
-              pytz
-              babel
-              pint
-              simpleeval
-              parsedatetime
-            ];
+            python3Packages.pytz
+            python3Packages.pint
+            # python3Packages.simpleeval
+            python3Packages.babel
+          ];
         });
       })
     ];
   };
 
   # Ulauncher package
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     ulauncher
   ];
 }

@@ -120,7 +120,7 @@
       "$mainMod, E, exec, $fileManager"
       "$mainMod, W, togglefloating,"
       "$mainMod, F, fullscreen,"
-      "$mainMod, R, exec, $menu"
+      "$mainMod, SPACE, exec, $menu"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
       "$mainMod, X, exec, missioncenter"

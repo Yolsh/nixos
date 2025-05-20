@@ -10,6 +10,9 @@
       yazi
       fzf
       brightnessctl
+      lazygit
+      lazydocker
+      gh
     ];
     programs.git.enable = true;
   };
