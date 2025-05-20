@@ -26,6 +26,7 @@
             /etc/nixos/hardware-configuration.nix
             ./modules/nixos/gui.nix
             ./modules/nixos/cli.nix
+            ./modules/nixos/dev.nix
             home-manager.nixosModules.default
           ];
         };

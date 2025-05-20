@@ -13,6 +13,7 @@
     #enable the default gui
     gui.enable = true;
     cli.enable = true;
+    dev.enable = true;
 
     #use experimental flakes
     nix.settings.experimental-features = [
