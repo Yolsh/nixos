@@ -14,6 +14,7 @@
       lazydocker
       gh
       tree
+      bat
     ];
     programs.git.enable = true;
   };
