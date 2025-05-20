@@ -13,6 +13,7 @@
       lazygit
       lazydocker
       gh
+      tree
     ];
     programs.git.enable = true;
   };
