@@ -29,6 +29,9 @@
         plugin = nvim-cmp;
         config = toLuaFile ./nvim/plugin/cmp.lua;
       }
+      cmp_luasnip
+      cmp-nvim-lsp
+      luasnip
 
       {
         plugin = telescope-nvim;
@@ -47,7 +50,11 @@
         ]));
         config = toLuaFile ./nvim/plugin/treesitter.lua;
       }
+      neodev-nvim
     ];
-    extraLuaConfig = ''${builtins.readFile ./nvim/options.lua}'';
+    extraLuaConfig = ''
+      ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./nvim/remaps.lua}
+    '';
   };
 }
