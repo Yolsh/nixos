@@ -15,6 +15,7 @@
       bat
       eza
       fastfetch
+      ripgrep
     ];
     programs.git.enable = true;
   };

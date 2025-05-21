@@ -10,6 +10,8 @@
       ls = "eza";
       tree = "eza --tree";
       cat = "bat";
+      cd = "z";
+      cdi = "zi";
     };
     shellInit = "theme_gruvbox dark hard";
   };
