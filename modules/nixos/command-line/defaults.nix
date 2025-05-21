@@ -5,7 +5,6 @@
 
   config = lib.mkIf config.cliDefaults.enable {
     environment.systemPackages = with pkgs; [
-      neofetch
       cbonsai
       yazi
       fzf
@@ -13,8 +12,9 @@
       lazygit
       lazydocker
       gh
-      tree
       bat
+      eza
+      fastfetch
     ];
     programs.git.enable = true;
   };

@@ -4,5 +4,6 @@
     ./cli-config/shell.nix
     ./cli-config/tmux.nix
     ./cli-config/git.nix
+    ./cli-config/nvim.nix
   ];
 }

@@ -17,6 +17,11 @@
       python312
       # -- golang --
       go_1_23
+      # -- rust --
+      rustup
+      # -- elixir --
+      elixir_1_18
+      erlang_27
     ];
   };
 }
