@@ -5,7 +5,6 @@
     nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    nvf.url = "github:notashelf/nvf";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -13,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nvf, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ... }@inputs: 
     let 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyInputs.${system};
@@ -29,7 +28,6 @@
             ./modules/nixos/cli.nix
             ./modules/nixos/dev.nix
             home-manager.nixosModules.default
-            nvf.nixosModules.default
           ];
         };
         hp = nixpkgs.lib.nixosSystem {
@@ -40,7 +38,6 @@
             ./modules/nixos/gui.nix
             ./modules/nixos/cli.nix
             home-manager.nixosModules.default
-            nvf.nixosModules.default
           ];
         };
       };
