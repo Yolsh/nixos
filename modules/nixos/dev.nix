@@ -15,13 +15,21 @@
       ocamlPackages.ocamlformat-rpc-lib
       # -- python--
       python312
+      pyright
       # -- golang --
       go_1_23
+      gopls
       # -- rust --
       rustup
+      rust-analyzer
       # -- elixir --
       elixir_1_18
       erlang_27
+      elixir-ls
+      # -- nix lsp --
+      nil
+	  # -- lua lsp --
+	  lua-language-server
     ];
   };
 }

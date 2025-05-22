@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{pkgs, ...}: {
   programs.neovim = 
     let
       toLua = str: "lua << EOF\n${str}\nEOF\n";
@@ -9,15 +9,15 @@
     vimAlias = true;
     vimdiffAlias = true;
 
+    extraLuaConfig = ''
+      ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./nvim/remaps.lua}
+    '';
+
     plugins = with pkgs.vimPlugins; [
       {
         plugin = nvim-lspconfig;
         config = toLuaFile ./nvim/plugin/lsp.lua;
-      }
-
-      {
-        plugin = comment-nvim;
-        config = toLua "require('Comment').setup()";
       }
 
       {
@@ -39,22 +39,17 @@
       }
 
       {
-        plugin = (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-          p.tree-sitter-vim
-          p.tree-sitter-bash
-          p.tree-sitter-lua
-          p.tree-sitter-python
-          p.tree-sitter-json
-          p.tree-sitter-rust
-        ]));
+        plugin = nvim-treesitter.withAllGrammars;
         config = toLuaFile ./nvim/plugin/treesitter.lua;
       }
-      neodev-nvim
+      
+      undotree
+      harpoon
+      lazydev-nvim
+      {
+        plugin = nvim-autopairs;
+        config = toLua "require('nvim-autopairs').setup {}";
+      }
     ];
-    extraLuaConfig = ''
-      ${builtins.readFile ./nvim/options.lua}
-      ${builtins.readFile ./nvim/remaps.lua}
-    '';
   };
 }
