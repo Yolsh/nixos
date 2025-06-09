@@ -16,6 +16,8 @@
       inputs.zen-browser.packages."${system}".default
       keyd
     ];
+
+    programs.thunar.enable = true;
     
     services.keyd.enable = true;
     environment.etc."keyd/default.conf".source = ./keyd.conf;
