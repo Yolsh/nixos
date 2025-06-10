@@ -5,6 +5,7 @@
     clock24 = true;
     shortcut = "s";
     disableConfirmationPrompt = true;
+    mouse = true;
     plugins = with pkgs.tmuxPlugins; [
       gruvbox
     ];

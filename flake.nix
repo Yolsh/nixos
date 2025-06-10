@@ -15,19 +15,24 @@
   outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ... }@inputs: 
     let 
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyInputs.${system};
     in
     {
       nixosConfigurations = {
         thinkpad = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          system = system;
           modules = [
             ./hosts/thinkpad/configuration.nix
+            {
+              _module.args = {inherit nixpkgs inputs;};
+            }
             /etc/nixos/hardware-configuration.nix
-            ./modules/nixos/gui.nix
-            ./modules/nixos/cli.nix
-            ./modules/nixos/dev.nix
-            home-manager.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {inherit nixpkgs inputs;};
+              home-manager.users.Yolsh = import ./home.nix;
+            }
           ];
         };
         hp = nixpkgs.lib.nixosSystem {
@@ -35,8 +40,6 @@
           modules = [
             ./hosts/hp/configuration.nix
             /etc/nixos/hardware-configuration.nix
-            ./modules/nixos/gui.nix
-            ./modules/nixos/cli.nix
             home-manager.nixosModules.default
           ];
         };

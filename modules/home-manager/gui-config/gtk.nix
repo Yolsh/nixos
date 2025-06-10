@@ -1,4 +1,4 @@
-{config, pkgs, ... }: {
+{pkgs, ... }: {
   gtk = {
     enable = true;
     font.name = "JetBrains Mono Nerd Font";
@@ -7,8 +7,8 @@
       package = pkgs.gruvbox-gtk-theme;
     };
     iconTheme = {
-      name = "Gruvbox-Plus-Dark";
-      package = pkgs.gruvbox-dark-icons-gtk;  # gruvbox-plus-icons when fixed
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;  # gruvbox-plus-icons when fixed
     };
     cursorTheme = {
       package = pkgs.capitaine-cursors-themed;

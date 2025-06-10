@@ -13,6 +13,7 @@
       ocamlformat
       ocamlPackages.utop
       ocamlPackages.ocamlformat-rpc-lib
+      gcc
       # -- python--
       python312
       pyright

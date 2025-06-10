@@ -4,7 +4,6 @@
 
     "$terminal" = "ghostty";
     "$fileManager" = "thunar";
-    "$menu" = "ulauncher-toggle";
     "$lock" = "hyprlock";
 
     exec-once = [
@@ -13,7 +12,9 @@
       "nm-applet"
       "hyprctl setcursor $XCURSOR_THEME 27"
       "swaync"
-      "ulauncher --hide-window --no-window-shadow"
+      "kando"
+      "[workspace 1 silent ; fullscreen] zen"
+      "[workspace special:magic ; fullscreen] $terminal -e tmux"
     ];
 
     env = [
@@ -120,7 +121,7 @@
       "$mainMod, E, exec, $fileManager"
       "$mainMod, W, togglefloating,"
       "$mainMod, F, fullscreen,"
-      "$mainMod, SPACE, exec, $menu"
+      "$mainMod, SPACE, global, kando:menu"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
       "$mainMod, X, exec, missioncenter"
@@ -177,6 +178,14 @@
     windowrulev2 = [
       "suppressevent maximize, class:.*"
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      "noblur, class:kando"
+      "opaque, class:kando"
+      "size 100% 100%, class:kando"
+      "noborder, class:kando"
+      "noanim, class:kando"
+      "float, class: kando"
+      "pin, class: kando"
+
     ];
   };
 }

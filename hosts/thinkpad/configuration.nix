@@ -1,19 +1,20 @@
-{ config, pkgs, inputs, ... }: {
+{ pkgs, ... }: {
     imports = [
-        inputs.home-manager.nixosModules.default
+        ./../../modules/nixos/gui.nix
+        ./../../modules/nixos/cli.nix
+        ./../../modules/nixos/dev.nix
     ];
     
     #declare initial version
-    system.stateVersion = "25.05";
+    system.stateVersion = "unstable";
+
+    gui.enable = true;
+    cli.enable = true;
+    dev.enable = true;
 
     ##bootloader
     boot.loader.systemd-boot.enable = true;
     boot.blacklistedKernelModules = [ "elan_i2c" ];
-
-    #enable the default gui
-    gui.enable = true;
-    cli.enable = true;
-    dev.enable = true;
 
     #use experimental flakes
     nix.settings.experimental-features = [
@@ -42,16 +43,6 @@
         ];
     };
 
-    home-manager = {
-      useGlobalPkgs = true;
-      extraSpecialArgs = { inherit inputs; };
-      users."Yolsh" = {
-        imports = [
-          ./home.nix
-        ];
-      };
-    };
-    
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
     ];
